@@ -55,7 +55,7 @@ main() {
     echo "Building Zola ..."
     git clone https://github.com/getzola/zola.git
     cd zola
-    if [[ -z "$ZOLA_BUILD_FEATURES"]]; then
+    if [[ -z "$ZOLA_BUILD_FEATURES" ]]; then
         cargo install --path . --locked
     else
         cargo install --path . --locked --features $ZOLA_BUILD_FEATURES
