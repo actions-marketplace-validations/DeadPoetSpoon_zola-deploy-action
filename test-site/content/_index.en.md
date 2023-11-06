@@ -1,3 +1,6 @@
++++
+title = "Zola"
++++
 # Zola Chinese Index Test
 Zola Chinese Index Test
 # What is Zola?

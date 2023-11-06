@@ -1,3 +1,6 @@
++++
+title = "Zola"
++++
 # Zola 中文索引测试
 Zola 中文索引测试
 # Zola 是什么？
