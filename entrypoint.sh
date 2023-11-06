@@ -60,7 +60,8 @@ main() {
     else
         cargo install --path . --locked --features $ZOLA_BUILD_FEATURES
     fi
-    cp target/release/zola ~/.cargo/bin/zola
+    ZOLA_PATH = "${pwd}/target/release"
+    export PATH="$PATH:${ZOLA_PATH}"
     cd ..
 
     echo "Starting deploy..."
