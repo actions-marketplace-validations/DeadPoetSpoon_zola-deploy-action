@@ -1,0 +1,20 @@
+name: Build Test With Features
+
+on: 
+ push:
+  branches:
+   - main
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v4
+    - name: Build
+      uses: DeadPoetSpoon/zola-deploy-action@v0.17.2
+      env:
+        ZOLA_BUILD_FEATURES: indexing-zh
+        BUILD_DIR: test-site
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
