@@ -52,15 +52,20 @@ fi
 
 main() {
 
-    echo "Building Zola ..."
-    git clone https://github.com/getzola/zola.git
-    cd zola
-    if [[ -z "$ZOLA_BUILD_FEATURES" ]]; then
-        cargo install --path . --locked
+    if [[ -z "$PREBUILD_FEATURES" ]]; then
+        echo "Building Zola ..."
+        git clone https://github.com/getzola/zola.git
+        cd zola
+        if [[ -z "$ZOLA_BUILD_FEATURES" ]]; then
+            cargo install --path . --locked
+        else
+            cargo install --path . --locked --features $ZOLA_BUILD_FEATURES
+        fi
+        cd ..
     else
-        cargo install --path . --locked --features $ZOLA_BUILD_FEATURES
+        echo "wget ${PREBUILD_FEATURES} from obs"
+        wget -q -O - "https://a-poor-imitation.obs.cn-north-9.myhuaweicloud.com/zola-${PREBUILD_FEATURES}-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C /usr/local/bin
     fi
-    cd ..
 
     echo "Starting deploy..."
 
