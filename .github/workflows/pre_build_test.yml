@@ -1,4 +1,4 @@
-name: Build Test With Features
+name: Pre Build Test
 
 on: 
  push:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v4
     - name: Build
-      uses: DeadPoetSpoon/zola-deploy-action@v0.8
+      uses: DeadPoetSpoon/zola-deploy-action@v0.9
       env:
         PREBUILD_FEATURES: indexing-zh
         BUILD_ONLY: true
