@@ -1,6 +1,9 @@
-name: 'Zola Deploy to Pages'
-description: 'Building a Zola site and deploying to Github Pages By BUILDING Zola with features'
+name: 'Zola(Re/Pre build with features) Deploy to Pages'
+description: 'Building a Zola site and deploying to Github Pages By BUILDING Zola with features, or use pre-build Zola.'
 author: 'Spoon'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'arrow-up'  
+  color: 'green'
