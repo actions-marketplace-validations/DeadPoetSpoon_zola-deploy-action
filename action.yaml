@@ -1,6 +1,6 @@
-name: "Zola(with indexing-zh feature) Deploy to Pages"
-description: "Build and deploy a Zola(with indexing-zh feature) site to GitHub Pages"
-author: "Shaleen Jain"
+name: "Zola(with indexing-zh and indexing-ja feature) Deploy to Pages"
+description: "Build and deploy a Zola(with indexing-zh and indexing-ja feature) site to GitHub Pages"
+author: "DeadPoetSpoon"
 runs:
   using: "docker"
   image: "Dockerfile"

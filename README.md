@@ -1,4 +1,4 @@
-# Use unofficial [zola](https://github.com/DeadPoetSpoon/zola) build with indexing-zh feature
+# Use unofficial [zola](https://github.com/DeadPoetSpoon/zola) build with indexing-zh and indexing-ja feature
 
 # Zola Deploy Action
 
@@ -36,12 +36,15 @@ jobs:
     - name: Checkout main
       uses: actions/checkout@v4
     - name: Build and deploy
-      uses: shalzz/zola-deploy-action@v0.21.0
+      uses: DeadPoetSpoon/zola-deploy-action@v0.22.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-This example will build and deploy to gh-pages branch on a push to the main branch,
+The action's version tags follow the version of Zola that should be used to build.
+To use Zola v0.21.0 for instance, specify `DeadPoetSpoon/zola-deploy-action@v0.21.0`.
+
+This example will build and deploy to gh-pages branch on a push to the main branch, 
 and it will build only on pull requests.
 ```yml
 name: Zola on GitHub Pages
@@ -60,7 +63,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Build only
-        uses: shalzz/zola-deploy-action@v0.21.0
+        uses: DeadPoetSpoon/zola-deploy-action@v0.22.1
         env:
           BUILD_DIR: docs
           BUILD_ONLY: true
@@ -75,7 +78,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
       - name: Build and deploy
-        uses: shalzz/zola-deploy-action@v0.21.0
+        uses: DeadPoetSpoon/zola-deploy-action@v0.22.1
         env:
           BUILD_DIR: docs
           PAGES_BRANCH: gh-pages
